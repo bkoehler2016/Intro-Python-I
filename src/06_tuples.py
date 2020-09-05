@@ -12,7 +12,8 @@ Additionally, your code will be safer if you opt to "write-protect"
 data that does not need to be changed. Tuples enforce immutability
 automatically.
 """
-
+import os
+os.system("clear")
 # Example:
 
 import math
@@ -35,10 +36,13 @@ print("Distance is: {:.2f}".format(dist(a, b)))
 # Write a function `print_tuple` that prints all the values in a tuple
 
 # YOUR CODE HERE
+def print_tuple(t):
+    for x in t:
+        print(x)
 
 t = (1, 2, 5, 7, 99)
 print_tuple(t)  # Prints 1 2 5 7 99, one per line
 
 # Declare a tuple of 1 element then print it
-u = (1)  # What needs to be added to make this work?
+u = (1, "")  # What needs to be added to make this work?
 print_tuple(u)

@@ -26,7 +26,22 @@ This would mean that from the command line you would call `python3 14_cal.py 4 2
 print out a calendar for April in 2015, but if you omit either the year or both values, 
 it should use today’s date to get the month and year.
 """
-
+import os
+os.system("clear")
 import sys
 import calendar
 from datetime import datetime
+
+print("Enter month in M format and year as YYYY") 
+user_input = input("Enter Month ").split(" ")
+length = len(user_input)
+today = datetime.now()
+
+if user_input[0] == "":
+  print(calendar.month(today.year, today.month))
+elif length == 1:
+  print(calendar.month(today.year, int(user_input[0])))
+elif length == 2:
+  print(calendar.month(int(user_input[1]), int(user_input[0])))
+else:
+  print("Enter month in M format and year as YYYY") 

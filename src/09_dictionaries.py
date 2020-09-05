@@ -14,6 +14,9 @@ has the following keys:
  - lon: a signed integer representing a longitude value
  - name: a name string for this location
 """
+import os
+os.system("clear")
+
 
 waypoints = [
     {
@@ -35,6 +38,12 @@ waypoints = [
 
 # Add a new waypoint to the list
 # YOUR CODE HERE
+waypoints.append({
+    "lat": 25,
+    "lon": -135,
+    "name": "somewhere"
+})
+print(waypoints)
 
 # Modify the dictionary with name "a place" such that its longitude
 # value is -130 and change its name to "not a real place"
@@ -42,6 +51,14 @@ waypoints = [
 # waypoints list.
 
 # YOUR CODE HERE
+waypoints[0]['lon'] = -130
+waypoints[0]['name'] = 'not a real place'
+print(waypoints)
 
 # Write a loop that prints out all the field values for all the waypoints
 # YOUR CODE HERE
+for v in waypoints:
+    print(str(v.values()))
+
+u_value = set( val for dic in waypoints for val in dic.values())
+print("Unique Values: ",u_value)
